@@ -74,5 +74,6 @@ ggplot2::ggsave(chart_file,
                 width = chart_width * 2,
                 height = chart_height * 2,
                 units = "cm",
+                bg = "white",
                 dpi = 600)
 
