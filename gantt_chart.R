@@ -15,7 +15,7 @@ def_file <- "gantt_source.xlsx"
 quarter_dates <- TRUE         # are the dates in the cheet in quarters
 show_wp <- FALSE              # show the WP as seperate entry
 concat_wp_activity <- TRUE    # concatenate wp and activity to one entry
-concat__char <- ": "          # concatenation char for wp and activity
+concat_char <- ": "          # concatenation char for wp and activity
 add_milestones <- TRUE        # if milestones should be added
 year_prefix <- "Jahr "        # Prefix for years in the header
 chart_file <- "gantt.png"     # chart output file
@@ -33,7 +33,7 @@ if (quarter_dates) {
 }
 
 if (concat_wp_activity) {
-  timeline <- timeline %>% mutate(activity = paste0(wp, concat__char, activity))
+  timeline <- timeline %>% mutate(activity = paste0(wp, concat_char, activity))
   timeline$wp <- timeline$color
 }
 
@@ -48,7 +48,7 @@ if (add_milestones) {
   }
 
   if (concat_wp_activity) {
-    milestones <- milestones %>% mutate(activity = paste0(wp, concat__char, activity))
+    milestones <- milestones %>% mutate(activity = paste0(wp, concat_char, activity))
   }
 }
 
