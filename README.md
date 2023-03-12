@@ -1,5 +1,5 @@
-# gannt_chart_quarters
-R code with an example to create GANNT Charts with Quarters.
+# gantt_chart_quarters
+R code with an example to create Gantt Charts with Quarters.
 
 ## Source
 
@@ -11,7 +11,7 @@ This is **not a package**. The provided code and example sheet should be self-ex
 
 # Files
 ```R
-gannt_chart.R      # Code example that sources gannt_graph_code.R
-gannt_graph_code.R # Code for the creation of the GANNT chart
-gannt_source.xlsx  # GANNT WP/Activity & Milestone definitions (example)
+gantt_chart.R      # Code example that sources gannt_graph_code.R
+gantt_graph_code.R # Code for the creation of the Gantt chart
+gantt_source.xlsx  # Gantt WP/Activity & Milestone definitions (example)
 ```
