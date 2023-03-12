@@ -15,3 +15,6 @@ gantt_chart.R      # Code example that sources gannt_graph_code.R
 gantt_graph_code.R # Code for the creation of the Gantt chart
 gantt_source.xlsx  # Gantt WP/Activity & Milestone definitions (example)
 ```
+
+# Example output
+![](gantt.png)
