@@ -8,6 +8,7 @@
 source("gantt_graph_code.R")
 library(readxl)
 library(dplyr)
+library(lubridate)
 
 # Settings ----
 # *******************************************************************
