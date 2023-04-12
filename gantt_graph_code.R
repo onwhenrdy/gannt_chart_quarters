@@ -8,6 +8,11 @@
 # Based on
 # https://github.com/giocomai/ganttrify/blob/master/R/ganttrify.R
 
+create_gantt_palette <- function(colors) {
+  structure(colors, class = "palette")
+}
+
+
 gantt_chart_quarters <- function(project,
                                  spots = NULL,
                                  project_start_date = zoo::as.yearmon(Sys.Date()),
@@ -106,7 +111,11 @@ gantt_chart_quarters <- function(project,
     activity = project |> select(wp,activity,start_date_date,end_date_date,row),
     wp = project.sum,
     .id = "type"
-  ) #|> dplyr::arrange(wp,row) # Add in WP and arrange so things group by WP
+  )
+
+  if (!hide_wp) {
+    project.wp <- project.wp |> dplyr::arrange(wp,row)
+  }
 
   # If desired remove WP rows
   if (hide_wp)
