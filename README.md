@@ -10,7 +10,7 @@ Based on [ganttrify](https://github.com/giocomai/ganttrify/) by [giocomai](https
 This is **not a package**. The provided code and example sheet should be self-explanatory.
 You can easily download the files to the current working directory (using [usethis](https://usethis.r-lib.org/)) via
 ```R
-usethis::use_zip("https://github.com/onwhenrdy/gantt_chart_quarters/archive/master.zip", destdir = "./", cleanup = TRUE)
+usethis::use_zip("https://github.com/onwhenrdy/gantt.quarters/archive/master.zip", destdir = "./", cleanup = TRUE)
 ```
 
 # Files
