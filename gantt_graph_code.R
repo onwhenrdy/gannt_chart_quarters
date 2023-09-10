@@ -36,7 +36,8 @@ gantt_chart_quarters <- function(project,
                                  x_axis_text_align = "left",
                                  y_axis_text_align="right",
                                  quarter_prefix = "Q",
-                                 year_prefix = "Y")
+                                 year_prefix = "Y",
+                                 starting_year = NULL)
 {
   # Fix some columns ----
   project$wp = as.character(project$wp)
@@ -93,7 +94,13 @@ gantt_chart_quarters <- function(project,
   if (max(seq_qN)==4) seq_y[length(seq_y)+1] = max(seq_y) %m+% months(12)
 
   # Create data.frame with all the info for labelling quarters
-  yl = paste0(year_prefix,seq_qY)
+  if (is.null(starting_year)) {
+    yl = paste0(year_prefix,seq_qY)
+  } else {
+    years <- seq(starting_year, starting_year + max(seq_qY))
+    yl <- years[seq_qY]
+  }
+
   ql = paste0(quarter_prefix,seq_qN)
   seq_q_df = data.frame(d=seq_q,q=seq_qN,y=seq_qY,
                         q.lab = paste0(ifelse(seq_qN==1,yl,""),"\n",ql),

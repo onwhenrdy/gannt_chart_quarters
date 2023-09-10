@@ -14,11 +14,11 @@ library(lubridate)
 # *******************************************************************
 def_file <- "gantt_source.xlsx"
 quarter_dates <- TRUE         # are the dates in the cheet in quarters
-show_wp <- FALSE              # show the WP as seperate entry
-concat_wp_activity <- TRUE    # concatenate wp and activity to one entry
-concat_char <- ": "          # concatenation char for wp and activity
+show_wp <- TRUE               # show the WP as seperate entry
+concat_wp_activity <- FALSE   # concatenate wp and activity to one entry
+concat_char <- ": "           # concatenation char for wp and activity
 add_milestones <- TRUE        # if milestones should be added
-year_prefix <- "Jahr "        # Prefix for years in the header
+year_prefix <- "Year "        # Prefix for years in the header
 chart_file <- "gantt.png"     # chart output file
 chart_width <- 16             # chart width in cm
 chart_height <- 6             # chart height in cm
@@ -57,6 +57,7 @@ if (add_milestones) {
 # Create Chart ----
 # *******************************************************************
 chart <- gantt_chart_quarters(timeline,
+                              colour_palette = create_gantt_palette(c("red", "blue", "green", "yellow", "red")),
                               spots = milestones,
                               size_activity = size_activity,
                               year_prefix = year_prefix,
